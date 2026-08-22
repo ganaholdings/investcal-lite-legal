@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>투자 계산기 Lite — 지원 · 개인정보처리방침 | Gana Holdings</title>
+<meta name="description" content="투자 계산기 Lite(무료·광고, 부동산 수익률·대출·DSR 한도 진단·예적금) iOS 앱의 지원 및 개인정보처리방침 페이지">
+<style>
+  :root {
+    --bg: #f6f8fb;
+    --panel: #ffffff;
+    --ink: #1f2733;
+    --ink-dim: #66707d;
+    --accent: #1e6fd9;
+    --accent-soft: rgba(30,111,217,0.12);
+    --rule: #dde3ea;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+    line-height: 1.7;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header {
+    text-align: center;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 40px;
+  }
+  .icon {
+    width: 84px; height: 84px; border-radius: 20px;
+    background: var(--accent);
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-bottom: 18px;
+    box-shadow: 0 6px 18px rgba(30,111,217,0.28);
+  }
+  .icon svg { width: 48px; height: 48px; }
+  h1 { font-size: 30px; font-weight: 700; letter-spacing: -0.3px; color: #111827; }
+  .app-name-en { color: var(--accent); font-weight: 500; font-size: 20px; }
+  .meta { margin-top: 10px; font-size: 14px; color: var(--ink-dim); }
+  nav.quick { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+  nav.quick a, .store-links a {
+    display: inline-block;
+    border: 1px solid var(--rule);
+    background: var(--panel);
+    color: var(--accent);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  nav.quick a:hover, .store-links a:hover { border-color: var(--accent); background: var(--accent-soft); }
+  .store-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
+  h2 {
+    font-size: 22px; font-weight: 700; color: #111827;
+    margin: 44px 0 14px; padding-top: 8px; letter-spacing: -0.2px;
+  }
+  h3 { font-size: 17px; font-weight: 600; color: #111827; margin: 26px 0 8px; }
+  p { margin-bottom: 14px; }
+  ul { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(30,111,217,0.3); }
+  a:hover { border-bottom-color: var(--accent); }
+  .highlight {
+    background: var(--panel);
+    border-left: 4px solid var(--accent);
+    padding: 16px 20px;
+    margin: 18px 0;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 1px 2px rgba(16,24,40,0.05);
+  }
+  .faq details {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 12px 18px;
+    margin-bottom: 10px;
+  }
+  .faq summary { cursor: pointer; font-weight: 600; color: #111827; }
+  .faq details p { margin: 10px 0 4px; color: #2f3a47; }
+  .section-divider { margin: 56px 0 40px; border-top: 1px solid var(--rule); text-align: center; }
+  .section-divider span {
+    display: inline-block; background: var(--bg); transform: translateY(-12px);
+    padding: 0 14px; color: var(--accent); font-size: 13px; letter-spacing: 2px; font-weight: 600;
+  }
+  .lang-label {
+    display: inline-block; font-size: 12px; color: var(--ink-dim); letter-spacing: 1px;
+    border: 1px solid var(--rule); background: var(--panel);
+    padding: 3px 10px; border-radius: 999px; margin-bottom: 8px;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; font-size: 15px; background: var(--panel); }
+  th, td { border: 1px solid var(--rule); padding: 8px 10px; vertical-align: top; text-align: left; }
+  th { background: #eef3f9; font-weight: 600; }
+  footer {
+    margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--rule);
+    text-align: center; font-size: 14px; color: var(--ink-dim);
+  }
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    .wrap { padding: 40px 18px 64px; }
+    h1 { font-size: 25px; }
+    h2 { font-size: 20px; }
+    table { font-size: 14px; }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f141b; --panel: #161d27; --ink: #e5e9ef; --ink-dim: #97a1ad;
+      --accent: #5b9cf0; --accent-soft: rgba(91,156,240,0.16); --rule: #28323f;
+    }
+    h1, h2, h3, .faq summary { color: #f3f5f8; }
+    .faq details p { color: #cfd6de; }
+    th { background: #1d2633; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="icon" aria-hidden="true">
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M24 9L10 21.5h3.5V37h21V21.5H38Z" fill="#ffffff"/>
+      <rect x="17" y="29" width="3.5" height="5" rx="1" fill="#1e6fd9"/><rect x="22.2" y="26" width="3.5" height="8" rx="1" fill="#1e6fd9"/><rect x="27.4" y="22.5" width="3.5" height="11.5" rx="1" fill="#1e6fd9"/>
+      <path d="M17.5 24.5l6.5-4.5 5 2.5" stroke="#2EE6A8" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </svg>
+  </div>
+  <h1>투자 계산기 Lite<br><span class="app-name-en">Investment Calculator Lite</span></h1>
+  <div class="meta">Gana Holdings Co., Ltd. &middot; Developer &amp; Support Information</div>
+  <div class="store-links">
+    <a href="https://apps.apple.com/app/id1485194389" target="_blank" rel="noopener">App Store (Lite · 무료)</a>
+    <a href="https://apps.apple.com/app/id6502860467" target="_blank" rel="noopener">광고 없는 유료 버전</a>
+  </div>
+  <nav class="quick">
+    <a href="#support">지원 · Support</a>
+    <a href="#faq">FAQ</a>
+    <a href="#ads">광고 안내</a>
+    <a href="#privacy">개인정보처리방침</a>
+    <a href="#privacy-en">Privacy Policy (EN)</a>
+  </nav>
+</header>
+
+<section id="about">
+  <h2>개발사 정보 / About</h2>
+  <p><strong>Gana Holdings Co., Ltd.</strong>는 iOS 앱 <strong>투자 계산기 Lite</strong>를 개발·서비스하는 대한민국 소재 개발사입니다. 앱은 부동산 수익률, 대출 상환, DSR 한도 진단, 예적금 만기액, 최신 금리 비교(금융감독원 공시) 등 투자·대출 관련 계산을 제공합니다. Lite는 <strong>무료이며 광고(Google AdMob 전면광고)가 표시</strong>됩니다. 광고 없는 유료 버전 "투자 계산기"도 App Store에서 제공합니다. 모든 계산 결과는 참고용이며 금융회사의 실제 심사·산정과 다를 수 있습니다.</p>
+  <p>Gana Holdings Co., Ltd. develops and publishes the iOS app <strong>투자 계산기 Lite (Investment Calculator Lite)</strong>, based in the Republic of Korea. The app provides real-estate yield, loan repayment, DSR limit diagnosis, deposit/savings maturity, and bank rate comparison (published by the Financial Supervisory Service of Korea). Lite is <strong>free and ad-supported</strong> (Google AdMob interstitial ads); an ad-free paid edition is also available. All results are for reference only.</p>
+</section>
+
+<section id="support">
+  <h2>문의 / Support</h2>
+  <p>앱 이용 중 문의사항이나 버그 제보는 아래 이메일로 연락해 주세요. 영업일 기준 2~3일 내 답변드립니다. 기기 모델, iOS 버전, 앱 버전(더보기 → 설정·정보)과 함께 보내 주시면 더 빠르게 도와드릴 수 있습니다.</p>
+  <p>For support requests or bug reports, please contact us at the email below. We aim to respond within 2–3 business days.</p>
+  <p><strong>Email:</strong> <a href="mailto:drgby@ganaholdings.com">drgby@ganaholdings.com</a></p>
+</section>
+
+<section id="faq">
+  <h2>자주 묻는 질문 / FAQ</h2>
+  <h3>한도 진단(DSR) 결과가 은행과 달라요.</h3>
+  <p>앱은 금융당국의 스트레스 DSR 3단계 규정과 대출 종류별 산정 원칙을 적용하지만, 금융회사마다 세부 산정 방식·우대 조건·소득 인정 기준이 다릅니다. 앱의 결과는 참고용이며 실제 한도는 금융회사에서 확인하세요. 규정 기준일은 더보기 → 설정·정보에서 볼 수 있습니다.</p>
+  <h3>금리 비교 데이터는 어디서 오나요?</h3>
+  <p>금융감독원 금융상품통합비교공시(금융상품한눈에)의 공시 자료를 매일 1회 수집해 보여줍니다. 공시월과 수집일을 목록 하단에 표시하며, 실제 적용 금리는 신용도·담보·우대조건에 따라 다릅니다.</p>
+  <h3>입력한 대출 정보는 어디에 저장되나요?</h3>
+  <p>모두 사용자의 기기 안에만 저장되며(iOS 앱 저장소), 개발사 서버로 전송되지 않습니다. 앱을 삭제하면 함께 삭제됩니다.</p>
+  <h3>계산 결과를 공유하면 무엇이 전송되나요?</h3>
+  <p>"공유" 버튼은 iOS 공유 시트를 열어 사용자가 고른 앱으로 결과 텍스트·이미지를 보냅니다. 개발사는 이 과정에 관여하지 않습니다.</p>
+  <h3>광고는 언제 나오나요? 없앨 수 있나요?</h3>
+  <p>"계산하기" 버튼을 누른 뒤 전면광고가 표시됩니다(화면에 따라 2~3회에 1번). 광고 없이 쓰려면 App Store의 <a href="https://apps.apple.com/app/id6502860467" target="_blank" rel="noopener">유료 버전 "투자 계산기"</a>를 이용해 주세요. 기능은 동일합니다.</p>
+</section>
+
+<section id="ads">
+  <h2>광고 안내 / Advertising</h2>
+  <div class="highlight">
+    <p>투자 계산기 Lite는 <strong>Google AdMob</strong>(Google LLC)의 전면광고를 표시합니다. 광고 SDK는 광고를 고르고 보여주기 위해 기기 정보를 Google에 전송합니다. 자세한 내용은 아래 개인정보처리방침 4항을 참고하세요.</p>
+    <p>앱은 iOS의 <strong>앱 추적 투명성(ATT) 허용을 요청하지 않습니다.</strong> 따라서 광고식별자(IDFA)를 이용한 앱 간 추적은 하지 않으며, 광고는 맞춤 정도가 제한된 형태로 제공될 수 있습니다.</p>
+  </div>
+</section>
+
+<section id="privacy">
+  <h2>투자 계산기 Lite 개인정보처리방침</h2>
+  <p class="meta">시행일: 2026-09-01 &middot; 버전 1.0 (Lite)</p>
+  <p>Gana Holdings Co., Ltd.(이하 "개발사")는 iOS 앱 "투자 계산기 Lite"(이하 "앱")와 관련하여 아래와 같이 개인정보를 처리합니다.</p>
+  <h3>1. 개발사가 수집하는 개인정보</h3>
+  <p>개발사는 <strong>개인정보를 직접 수집하지 않습니다.</strong> 회원가입·로그인이 없으며, 이름·연락처·위치 등 어떠한 개인정보도 개발사 서버로 전송되지 않습니다. 다만 앱에 포함된 광고 SDK(Google AdMob)가 광고 제공을 위해 일부 기기 정보를 Google에 전송합니다(4항).</p>
+  <h3>2. 기기 내 저장 정보</h3>
+  <p>사용자가 입력한 소득·대출·계산 조건과 최근 계산 기록, 시나리오는 사용자 기기의 앱 저장소에만 보관됩니다. 이 정보는 앱 기능 제공(입력값 유지·기록·비교)에만 사용되며, 앱 삭제 또는 "기록 모두 지우기"로 삭제됩니다.</p>
+  <h3>3. 네트워크 통신</h3>
+  <p>앱은 금리·규정 데이터 파일(JSON)을 개발사가 운영하는 정적 웹 페이지(GitHub Pages, ganaholdings.github.io)에서 하루 1회 내려받습니다. 이 요청에는 개인정보가 포함되지 않으며, 호스팅 서비스가 표준 서버 로그(IP 주소, 요청 시각)를 처리할 수 있습니다. 금융회사 홈페이지 링크를 누르면 외부 브라우저로 이동하며, 해당 사이트의 정책이 적용됩니다. 광고 요청은 4항의 Google 서버와 통신합니다.</p>
+  <h3>4. 광고 (Google AdMob)</h3>
+  <p>앱은 Google LLC의 광고 서비스 <strong>Google AdMob</strong>을 통해 전면광고를 표시합니다. Google Mobile Ads SDK는 광고를 선택·표시·측정하고 부정 사용을 막기 위해 다음 정보를 수집해 Google에 전송할 수 있습니다.</p>
+  <table>
+    <tr><th>항목</th><th>내용</th></tr>
+    <tr><td>기기 식별자</td><td>앱 단위 기기 식별자(IDFV) 등. 광고식별자(IDFA)는 앱이 추적 허용(ATT)을 요청하지 않으므로 iOS가 제공하지 않습니다.</td></tr>
+    <tr><td>기기·네트워크 정보</td><td>기기 모델, OS 버전, 언어, 시간대, IP 주소(대략적 위치 추정에 사용될 수 있음)</td></tr>
+    <tr><td>사용·광고 정보</td><td>앱 번들 ID, 광고 노출·클릭 등 광고 상호작용</td></tr>
+    <tr><td>진단 정보</td><td>광고 로드 오류 등 SDK 진단 정보</td></tr>
+  </table>
+  <p>수집 주체와 이용 목적은 Google의 정책을 따릅니다: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a> · <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google 파트너 사이트·앱에서의 데이터 사용</a>. 맞춤 광고를 제한하려면 iOS 설정 › 개인정보 보호 및 보안 › Apple 광고 / 추적에서 설정하거나 <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google 광고 설정</a>을 이용할 수 있습니다. 광고 없이 이용하려면 유료 버전 "투자 계산기"를 사용하세요.</p>
+  <h3>5. 제3자 제공·위탁</h3>
+  <p>개발사는 개인정보를 제3자에게 제공하거나 처리를 위탁하지 않습니다. 다만 4항의 광고 SDK가 Google LLC(미국)에 정보를 전송하므로 국외 이전이 발생할 수 있습니다. 앱에는 그 밖의 광고·분석 SDK가 포함되어 있지 않습니다.</p>
+  <h3>6. 이용자의 권리</h3>
+  <p>개발사가 보유한 개인정보가 없으므로 열람·정정·삭제 요청 대상이 없습니다. 기기 내 저장 정보는 사용자가 직접 삭제할 수 있으며, 광고 관련 정보는 Google의 절차(위 링크)를 따릅니다.</p>
+  <h3>7. 아동의 개인정보</h3>
+  <p>개발사는 만 14세 미만 아동의 개인정보를 수집하지 않으며, 앱은 아동을 대상으로 하지 않습니다.</p>
+  <h3>8. 방침 변경</h3>
+  <p>이 방침이 변경되면 이 페이지에 시행일과 함께 게시합니다.</p>
+  <h3>9. 문의</h3>
+  <p>Gana Holdings Co., Ltd. &middot; <a href="mailto:drgby@ganaholdings.com">drgby@ganaholdings.com</a></p>
+</section>
+
+<section id="privacy-en">
+  <h2>Privacy Policy — 투자 계산기 Lite (Investment Calculator Lite)</h2>
+  <p class="meta">Effective: 2026-09-01 &middot; Version 1.0 (Lite)</p>
+  <h3>1. Information we collect</h3>
+  <p>We (Gana Holdings Co., Ltd.) do <strong>not collect personal information ourselves</strong>. There is no account or sign-in, and no name, contact details, or location are sent to our servers. The app does include an advertising SDK (Google AdMob) that sends certain device information to Google to serve ads (see section 4).</p>
+  <h3>2. Data stored on your device</h3>
+  <p>Income, loan, and calculation inputs, recent results, and saved scenarios are stored only in the app's storage on your device, solely to provide app features. They are removed when you delete the app or use "Clear all history".</p>
+  <h3>3. Network access</h3>
+  <p>Once a day the app downloads rate and regulation data files (JSON) from a static website we operate (GitHub Pages, ganaholdings.github.io). These requests contain no personal data; the hosting provider may process standard server logs (IP address, timestamp). Links to financial institutions open in your browser and are governed by those sites' policies. Ad requests communicate with Google servers (section 4).</p>
+  <h3>4. Advertising (Google AdMob)</h3>
+  <p>The app shows interstitial ads through <strong>Google AdMob</strong> (Google LLC). The Google Mobile Ads SDK may collect and send to Google: device identifiers such as the vendor identifier (IDFV) — the advertising identifier (IDFA) is not available because the app does not request App Tracking Transparency permission; device and network information (model, OS version, language, time zone, IP address, which may be used to estimate coarse location); app and ad interaction data (bundle ID, impressions, clicks); and diagnostics (e.g. ad load errors). This data is used to serve, measure, and protect ads in accordance with <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from sites or apps that use its services</a>. You can limit personalized ads in iOS Settings › Privacy &amp; Security › Apple Advertising / Tracking, or via <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ads Settings</a>. An ad-free paid edition, "투자 계산기", is available on the App Store.</p>
+  <h3>5. Third parties</h3>
+  <p>We do not sell or share personal data with third parties. The advertising SDK described in section 4 transfers data to Google LLC (United States). The app contains no other advertising or analytics SDKs.</p>
+  <h3>6. Children</h3>
+  <p>We do not knowingly collect personal information from children under 14, and the app is not directed at children.</p>
+  <h3>7. Changes &amp; contact</h3>
+  <p>Updates to this policy are posted on this page with the effective date. Contact: <a href="mailto:drgby@ganaholdings.com">drgby@ganaholdings.com</a></p>
+</section>
+
+<footer>
+  <p>&copy; Gana Holdings Co., Ltd. &middot; <a href="https://ganaholdings.github.io/">ganaholdings.github.io</a></p>
+</footer>
+
+</div>
+</body>
+</html>
